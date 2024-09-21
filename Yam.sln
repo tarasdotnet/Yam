@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yam.API", "Yam.API\Yam.API.csproj", "{6B8F163D-F0A2-44FD-BD7B-19AA0D004FE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yam.Business", "Yam.Business\Yam.Business.csproj", "{42EBBF3E-3010-4058-9086-C5050F67B3C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yam.Data", "Yam.Data\Yam.Data.csproj", "{D2C03EE7-C90B-42F0-BFFA-3012F6FC36F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B8F163D-F0A2-44FD-BD7B-19AA0D004FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B8F163D-F0A2-44FD-BD7B-19AA0D004FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B8F163D-F0A2-44FD-BD7B-19AA0D004FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B8F163D-F0A2-44FD-BD7B-19AA0D004FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42EBBF3E-3010-4058-9086-C5050F67B3C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42EBBF3E-3010-4058-9086-C5050F67B3C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42EBBF3E-3010-4058-9086-C5050F67B3C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42EBBF3E-3010-4058-9086-C5050F67B3C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C03EE7-C90B-42F0-BFFA-3012F6FC36F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C03EE7-C90B-42F0-BFFA-3012F6FC36F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C03EE7-C90B-42F0-BFFA-3012F6FC36F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C03EE7-C90B-42F0-BFFA-3012F6FC36F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49E2C548-3BBF-421F-BE07-67689B4A9A91}
+	EndGlobalSection
+EndGlobal
