@@ -1,0 +1,119 @@
+.auth-container {
+    margin: 40px auto;
+    min-width: 400px;
+    width: 33%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.auth-title {
+    font-size: 25px;
+    font-weight: 400;
+    margin: 20px 0px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+    width: 100%;
+    max-width: 400px;
+    margin: 5px auto;
+    padding: 20px;
+    background-color: #f6f8fa;
+    border: 1px solid #d8dee4;
+    border-radius: 7px;
+}
+
+.form-container label {
+    align-self: flex-start;
+    font-size: 16px;
+}
+
+.form-container input,
+.form-container select {
+    margin-bottom: 10px;
+    border: 1px solid #d8dee4;
+    border-radius: 7px;
+    height: 35px;
+    padding: 0 10px;
+}
+
+.form-container input:focus,
+.form-container select {
+    outline-color: #0969da;
+}
+
+.date-input {
+    width: 90%;
+}
+
+/* Date picker icon div */ 
+div.css-1laqsz7-MuiInputAdornment-root {
+    height: 35px;
+    width: 35px;
+}
+
+/* Date picker button */ 
+div.css-1laqsz7-MuiInputAdornment-root > button {
+    height: 35px;
+    width: 35px;
+}
+
+.form-container .gender {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gender-label {
+    margin-top: 13.9px;
+}
+
+.gender-select {
+    margin-top: 6px;
+    width: 95px;
+}
+
+.password {
+    font-weight: 900;
+}
+
+.submit-button {
+    margin-top: 5px;
+    height: 35px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background-color: #61C3DC;
+    border-radius: 7px;
+}
+
+.submit-button:hover,
+select {
+    transition: all 0.2s ease-in-out;
+    background: #07659b;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-button:active {
+    background-color: darkgreen;
+}
+
+.error-container {
+    position: relative;
+    height: 0;
+}
+
+.error-messsage {
+    color: red;
+    font-size: x-small;
+    position: absolute;
+    top: -16px;
+    left: 2px;
+}

@@ -1,0 +1,20 @@
+{
+    "emailValidation": "Invalid email",
+    "enterPassword": "Enter password",
+    "enterUsername": "Enter username",
+    "firstname": "First name",
+    "firstnameValidation": "First name length should be between 2 and 30",
+    "lastname": "Last name",
+    "lastnameValidation": "Last name length should be between 2 and 30",
+    "login": "Log In",
+    "logout": "Log Out",
+    "password": "Password",
+    "passwordsNotEqual": "Passwords are not equal",
+    "phonenumberValidation": "Phone number length should be between 10 and 12",
+    "plugpage": "Plug Page",
+    "profile": "Profile",
+    "repeatPassword": "Repeat password",
+    "signup": "Sign Up",
+    "username": "Username",
+    "usernameValidation": "Username length should be between 2 and 30"
+}
