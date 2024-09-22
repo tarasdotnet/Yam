@@ -1,6 +1,4 @@
 import { Box } from '@mui/material';
-// import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
-// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
@@ -20,26 +18,16 @@ export default function SignUpForm() {
         firstName: Yup.string()
             .min(2, `${t("firstnameValidation")}`)
             .max(30, `${t("firstnameValidation")}`),
-            // .required("Enter first name"),
         lastName: Yup.string()
             .min(2, `${t("lastnameValidation")}`)
             .max(30, `${t("lastnameValidation")}`),
-            // .required("Enter last name"),
         userName: Yup.string()
             .min(2, `${t("usernameValidation")}`)
             .max(30, `${t("usernameValidation")}`)
             .required(`${t("enterUsername")}`),
         email: Yup.string()
             .email(`${t("emailValidation")}`),
-            // .required('Enter email'),
         phoneNumber: Yup.string().matches(phoneNumberRegex, `${t("phonenumberValidation")}`),
-        // birthdate: Yup.date()
-        //     .min(new Date('1910-01-01T00:00:00'), 'Available dates from 1910 to present day')
-        //     .max(new Date(), 'Available dates from 1910 to present day')
-        //     .required('Enter birthdate'),
-        // genderId: Yup.number()
-        //     .min(1, 'Choose your gender')
-        //     .required('Choose your gender'),
         password: Yup.string()
             .required(`${t("enterPassword")}`),
         passwordConfirmation: Yup.string()
@@ -53,21 +41,17 @@ export default function SignUpForm() {
             lastName: '',
             userName: '',
             email: '',
-            phoneNumber: '',
-            // birthdate: new Date('2000-01-01T00:00:00'),
-            // genderId: 0,
             password: '',
             passwordConfirmation: ''
         },
         validationSchema: signupSchema,
         onSubmit: async(values) => {
             setErrorsArray([]);
-            // values.birthdate = convertDate(values.birthdate);
             let data = JSON.stringify(values, null, 2);
 
             const signUpResponse = await UserService.postSignUp(data);
-            if (signUpResponse.data.data == null || signUpResponse.data.data === undefined) {
-                setErrorsArray([signUpResponse.data.Error.ErrorMessage]);
+            if (signUpResponse.status < 200 || signUpResponse.status >= 300) {
+                setErrorsArray([signUpResponse.data]);
                 return;
             }
 
@@ -76,16 +60,16 @@ export default function SignUpForm() {
                 password: values.password
             });
 
-            if(logInResponse.data.data) {
+            if(logInResponse.status >= 200 && logInResponse.status < 300) {
                 const isSignedIn = signIn({
                     auth: {
-                        token: logInResponse.data.data.token,
+                        token: logInResponse.data.token,
                         type: 'Bearer',
                     },
                     userState: {
-                        name: logInResponse.data.data.username,
-                        uid: logInResponse.data.data.id,
-                        role: logInResponse.data.data.roles,
+                        name: logInResponse.data.username,
+                        uid: logInResponse.data.id,
+                        role: logInResponse.data.roles,
                     }
                 });
 
@@ -93,11 +77,11 @@ export default function SignUpForm() {
                     const redirectTo = getQueryParam('redirectTo');
                     window.location.assign(redirectTo ? `/${redirectTo}` : '/profile');
                 } else {
-                    setErrorsArray(['Failed to sign in. Please try again.']);
+                    setErrorsArray(['Failed to log in. Please try again.']);
                 }
             }
             else {
-                setErrorsArray([logInResponse.data.Error.ErrorMessage]);
+                setErrorsArray([logInResponse.data]);
             }
         },
       });
@@ -184,23 +168,6 @@ export default function SignUpForm() {
                         </div>
                     </div>
                 }
-                {/* <label htmlFor="phoneNumber">Phone number</label>
-                <input
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    type='phoneNumber'
-                    onChange={formik.handleChange}
-                    value={formik.values.phoneNumber}
-                    placeholder='+380-111-222333'
-                />
-                {
-                    formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber) &&
-                    <div className='error-container'>
-                        <div className="error-messsage">
-                            {formik.touched.phoneNumber && formik.errors.phoneNumber}
-                        </div>
-                    </div>
-                } */}
                 <label htmlFor="password">
                     {t("password")}
                 </label>
