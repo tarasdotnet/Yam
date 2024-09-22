@@ -89,14 +89,14 @@ div.css-1laqsz7-MuiInputAdornment-root > button {
     font-size: 18px;
     font-weight: 600;
     color: white;
-    background-color: #61C3DC;
+    background-color: #007bfc;
     border-radius: 7px;
 }
 
 .submit-button:hover,
 select {
     transition: all 0.2s ease-in-out;
-    background: #07659b;
+    background: #0d1e67;
     color: white;
     cursor: pointer;
 }

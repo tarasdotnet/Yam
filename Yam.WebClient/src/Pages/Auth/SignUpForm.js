@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
-import AuthService from '../../ApiServices/AuthService';
+import UserService from '../../ApiServices/UserService';
 import ErrorAlert from '../../Components/ErrorAlert';
 import useSignIn from 'react-auth-kit/hooks/useSignIn';
 import { getQueryParam } from '../../Helpers/URLHelper';
@@ -65,13 +65,13 @@ export default function SignUpForm() {
             // values.birthdate = convertDate(values.birthdate);
             let data = JSON.stringify(values, null, 2);
 
-            const signUpResponse = await AuthService.postSignUp(data);
+            const signUpResponse = await UserService.postSignUp(data);
             if (signUpResponse.data.data == null || signUpResponse.data.data === undefined) {
                 setErrorsArray([signUpResponse.data.Error.ErrorMessage]);
                 return;
             }
 
-            const logInResponse = await AuthService.postLogIn({
+            const logInResponse = await UserService.postLogIn({
                 username: values.userName,
                 password: values.password
             });
@@ -91,7 +91,7 @@ export default function SignUpForm() {
 
                 if (isSignedIn) {
                     const redirectTo = getQueryParam('redirectTo');
-                    window.location.assign(redirectTo ? `/${redirectTo}` : '/');
+                    window.location.assign(redirectTo ? `/${redirectTo}` : '/profile');
                 } else {
                     setErrorsArray(['Failed to sign in. Please try again.']);
                 }

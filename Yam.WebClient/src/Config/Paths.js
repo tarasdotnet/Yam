@@ -3,7 +3,7 @@ export const PATHS = {
     User: '/User',
     SignUp: '/signUp',
     LogIn: '/logIn',
-    Profile: 'profile',
+    Profile: '/Profile',
 };
 
 export const CURRENT_HOST = 'http://localhost:3000';

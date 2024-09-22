@@ -1,0 +1,22 @@
+{
+    "emailValidation": "אימייל לא חוקי",
+    "enterPassword": "הזן סיסמה",
+    "enterUsername": "הזן שם משתמש",
+    "firstname": "שם פרטי",
+    "firstnameValidation": "אורך השם הפרטי צריך להיות בין 2 ל-30",
+    "gender": "מין",
+    "lastname": "שם משפחה",
+    "lastnameValidation": "אורך שם המשפחה צריך להיות בין 2 ל-30",
+    "login": "כניסה",
+    "logout": "יציאה",
+    "password": "סיסמה",
+    "passwordsNotEqual": "הסיסמאות אינן תואמות",
+    "phoneNumber": "מספר טלפון",
+    "phonenumberValidation": "אורך מספר הטלפון צריך להיות בין 10 ל-12",
+    "plugpage": "עמוד ביניים",
+    "profile": "פרופיל",
+    "repeatPassword": "חזור על הסיסמה",
+    "signup": "הרשמה",
+    "username": "שם משתמש",
+    "usernameValidation": "אורך שם המשתמש צריך להיות בין 2 ל-30"
+}

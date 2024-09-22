@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
-import AuthService from '../../ApiServices/AuthService';
+import UserService from '../../ApiServices/UserService';
 import ErrorAlert from '../../Components/ErrorAlert';
 import useSignIn from 'react-auth-kit/hooks/useSignIn';
 import { useFormik } from 'formik';
@@ -29,8 +29,9 @@ export default function LoginForm() {
         onSubmit: async(values) => {
             setErrorsArray([]);
             let data = JSON.stringify(values, null, 2);
-            const authResponse = await AuthService.postLogIn(data);
-console.log(authResponse)
+
+            const authResponse = await UserService.postLogIn(data);
+
             if(authResponse.status >= 200 && authResponse.status < 300) {
                 const isSignedIn = signIn({
                     auth: {
@@ -45,7 +46,6 @@ console.log(authResponse)
                 });
 
                 if (isSignedIn) {
-                    console.log('here')
                     const redirectTo = getQueryParam('redirectTo');
                     window.location.assign(redirectTo ? `/${redirectTo}` : '/profile');
                 } else {
